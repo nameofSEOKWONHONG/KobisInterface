@@ -42,5 +42,35 @@ namespace MovieInfoGather.Repositories
             var rHelper = new RequestHelper();
             return await rHelper.GetRequestAsync<KobisMovieInfoDetailResult>(Consts.KOBIS_MOVIE_DETAIL_URL, request.ToGetParam<KobisMovieInfoDetailRequest>());
         }
+
+        public async Task<KobisMoviePersonListResult> GetMoviePersonListAsync(KobisMoviePersonListRequest request)
+        {
+            var rHelper = new RequestHelper();
+            return await rHelper.GetRequestAsync<KobisMoviePersonListResult>(Consts.KOBIS_MOVIE_PERSON_LIST_URL, request.ToGetParam<KobisMoviePersonListRequest>());
+        }
+
+        public async Task<KobisMoviePersonDetailResult> GetMoviePersonDetailAsync(KobisMoviePersonDetailRequest request)
+        {
+            var rHelper = new RequestHelper();
+            return await rHelper.GetRequestAsync<KobisMoviePersonDetailResult>(Consts.KOBIS_MOVIE_PERSON_DETAIL_URL, request.ToGetParam<KobisMoviePersonDetailRequest>());
+        }
+
+        public async Task<KobisCommCodeResult> GetMovieCommCodeListAsync(KobisCommCdRequest request)
+        {
+            var rHelper = new RequestHelper();
+            return await rHelper.GetRequestAsync<KobisCommCodeResult>(Consts.KOBIS_COMMON_CODE_URL, request.ToGetParam<KobisCommCdRequest>());
+        }
+
+        public async Task<KobisMovieCompListResult> GetMovieCompListAsync(KobisMovieCompListRequest request)
+        {
+            var rHelper = new RequestHelper();
+            return await rHelper.GetRequestAsync<KobisMovieCompListResult>(Consts.KOBIS_MOVIE_COMP_LIST_URL, request.ToGetParam<KobisMovieCompListRequest>());
+        }
+
+        public async Task<KobisMovieCompDetailResult> GetMovieCompDetailAsync(KobisMovieCompDetailRequest request)
+        {
+            var rHelper = new RequestHelper();
+            return await rHelper.GetRequestAsync<KobisMovieCompDetailResult>(Consts.KOBIS_MOVIE_COMP_DETAIL_URL, request.ToGetParam<KobisMovieCompDetailRequest>());
+        }
     }
 }

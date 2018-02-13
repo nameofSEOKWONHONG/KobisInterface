@@ -18,6 +18,8 @@ namespace MovieInfoGather
 
         public async Task<TEntity> GetRequestAsync<TEntity>(string url, string param)
         {
+            TEntity entity = default(TEntity);
+
             using(var client = new HttpClient())
             {
                 try
@@ -31,7 +33,7 @@ namespace MovieInfoGather
                     {
                         var result = await response.Content.ReadAsStringAsync();
 
-                        return JsonConvert.DeserializeObject<TEntity>(result);
+                        entity = JsonConvert.DeserializeObject<TEntity>(result);
                     }
                 }
                 catch(Exception e)
@@ -44,7 +46,7 @@ namespace MovieInfoGather
                 }
             }
 
-            return default(TEntity);
+            return entity;
         }
     }
 }
